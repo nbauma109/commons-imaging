@@ -541,6 +541,7 @@ public class JpegDecoder extends BinaryFileParser implements JpegUtils.Visitor {
         } catch (final IOException ioEx) {
             ioException = ioEx;
         } catch (final RuntimeException ex) {
+            ex.printStackTrace();
             // Corrupt images can throw NPE and IOOBE
             imageReadException = new ImagingException("Error parsing JPEG", ex);
         }
